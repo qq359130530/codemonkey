@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zerod.codemonkey.mapper.TableMapper">
+
+	<!-- 查询表列表 -->
+	<select id="listTableBySchema" resultType="table" databaseId="mysql">
+		SELECT
+			TABLE_NAME, #{tableSchema} TABLE_SCHEMA, TABLE_COMMENT
+		FROM
+			TABLES
+		WHERE
+			TABLE_SCHEMA = #{tableSchema}
+	</select>
+	
+</mapper>
